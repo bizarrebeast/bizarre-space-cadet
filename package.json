@@ -1,0 +1,11 @@
+{
+  "name": "bizarre-space-cadet",
+  "version": "1.0.0",
+  "description": "bizarre-space-cadet - A BizarreBeasts Learning Lab game",
+  "type": "module",
+  "scripts": { "dev": "vite", "build": "vite build", "preview": "vite preview" },
+  "keywords": ["game", "bizarrebeasts", "learning", "educational"],
+  "author": "BizarreBeasts",
+  "license": "ISC",
+  "devDependencies": { "vite": "^7.3.1", "vite-plugin-singlefile": "^2.3.0" }
+}
