@@ -26,7 +26,6 @@ function resize() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   initStars();
 }
-resize(); window.addEventListener('resize', resize);
 
 // --- Constants ---
 const COLORS = {red:'#ff4455',blue:'#4488ff',green:'#44dd66',yellow:'#ffdd33',purple:'#bb55ff',orange:'#ff8833',pink:'#ff77aa',cyan:'#44ddee'};
@@ -431,6 +430,10 @@ function drawFinale(t, dt) {
   drawTextOutline('Tap to Play Again!', W/2, H*0.85, Math.min(W*0.07, 30), '#ffdd44', '#000');
   ctx.globalAlpha = 1;
 }
+
+// resize() calls initStars(), so it must run after the state declarations
+// above (let bgStars etc.) or the whole script dies in the TDZ.
+resize(); window.addEventListener('resize', resize);
 
 // --- Main loop ---
 let lastTime = 0;
